@@ -1,13 +1,26 @@
+import { createTheme, MantineProvider } from '@mantine/core';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Homepage } from '@/pages/Homepage';
+import React from 'react';
 import '@mantine/core/styles.css';
 
-import { MantineProvider } from '@mantine/core';
-import { Router } from './Router';
-import { theme } from './theme';
+const theme = createTheme({
+    // Put your mantine theme override here
+});
 
-export default function App() {
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Homepage />,
+    },
+]);
+
+const App: React.FC = () => {
     return (
         <MantineProvider theme={theme}>
-            <Router />
+            <RouterProvider router={router} />
         </MantineProvider>
     );
-}
+};
+
+export default App;

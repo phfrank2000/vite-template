@@ -1,10 +1,16 @@
 import { Anchor, Text, Title } from '@mantine/core';
-import classes from './Welcome.module.css';
+import React, { CSSProperties } from 'react';
 
-export function Welcome() {
+const Welcome: React.FC = () => {
+    const styles: { [key: string]: CSSProperties } = {
+        title: {
+            fontSize: 100,
+        },
+    };
+
     return (
         <>
-            <Title className={classes.title} ta="center" mt={100}>
+            <Title style={styles.title} ta="center" mt={100}>
                 Welcome to{' '}
                 <Text
                     inherit
@@ -25,4 +31,6 @@ export function Welcome() {
             </Text>
         </>
     );
-}
+};
+
+export default Welcome;
