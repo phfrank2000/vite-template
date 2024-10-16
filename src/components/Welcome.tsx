@@ -27,7 +27,7 @@ const Welcome: React.FC = () => {
                 <Anchor href="https://mantine.dev/guides/vite/" size="lg">
                     this guide
                 </Anchor>
-                . To get started edit pages/Home.page.tsx file.
+                .
             </Text>
         </>
     );
